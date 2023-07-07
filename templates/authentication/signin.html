@@ -7,7 +7,19 @@
   </head>
   <body>
     <!-- Your content goes here -->
-    <h3>sign in</h3>
+    <h1>sign in</h1>
+    <br />
+    <form action="/signin" method="post">
+      {% csrf_token %}
+      <label for="">username: </label>
+      <input type="text" id="username" name="username" placeholder="bittu123" />
+      <br />
+      <br />
+      <label for="">password: </label>
+      <input type="password" id="pass1" name="pass1" />
+      <br />
+      <br />
+      <button type="submit">sign in</button>
     <script src="your-script.js"></script>
   </body>
 </html>

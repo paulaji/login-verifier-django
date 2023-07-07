@@ -6,7 +6,13 @@
     <title>django login</title>
   </head>
   <body>
-    <h3>Welcome to the login page!</h3>
+    {%for message in messages%}
+    <div class="alert alert-{{message.tags}}"></div>
+    {% if user.is_authenticated %}
+    <h3>Namaskaaram {{fname}}</h3>
+    {%endif%} {%endfor%}
+    <h1>Welcome to the login page!</h1>
+    <br />
     <button type="submit"><a href="./signup">sign up</a></button>
     <button type="submit"><a href="./signin">sign in</a></button>
     <button type="submit"><a href="/signout">sign out</a></button>
