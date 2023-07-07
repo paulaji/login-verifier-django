@@ -1,0 +1,7 @@
+created a virtual environment using pip install virtualenv 
+named virtualenv using virtualenv venv 
+to activate virtualenv venv\Scripts\activate
+install django in virtual environment pip install django
+start django project using django-admin startproject loginsystem
+create django app using python manage.py startapp authentication
+run server using python manage.py runserver

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign up</title>
+  </head>
+  <body>
+    <!-- Your content goes here -->
+    <h1>sign up</h1>
+    <br />
+    <form action="/signup" method="post">
+      {% csrf_token %}
+      <label for="">username: </label>
+      <input type="text" id="username" name="username" placeholder="bittu123" />
+      <br />
+      <br />
+      <label for="">firstname: </label>
+      <input type="text" id="fname" name="fname" placeholder="Jack" />
+      <br />
+      <br />
+      <label for="">lastname: </label>
+      <input type="text" id="lname" name="lname" placeholder="MeHoff" />
+      <br />
+      <br />
+      <label for="">e-mail: </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="bittu123@example.com"
+      />
+      <br />
+      <br />
+      <label for="">enter new password: </label>
+      <input type="password" id="pass1" name="pass1" />
+      <br />
+      <br />
+      <label for="">re-enter new password: </label>
+      <input type="password" id="pass2" name="pass2" />
+      <br />
+      <br />
+      <button type="submit">sign up</button>
+    </form>
+    <script src="your-script.js"></script>
+  </body>
+</html>
