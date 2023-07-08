@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # to show/output a message that the user has successfully registered or all such messages, we can import an inbuilt library
 from django.contrib import messages
 # when in sign in page, if we enter the username and password, we need to authenticate the user, we can use the following library
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
@@ -37,7 +37,7 @@ def signin(request):
         username = request.POST['username']
         pass1 = request.POST['pass1']
 
-        user = authenticate(username='username', password='pass1')
+        user = authenticate(username=username, password=pass1)
 
         # if infact we find the user,
         if user is not None:
@@ -52,4 +52,6 @@ def signin(request):
     return render(request, "authentication/signin.html")
 
 def signout(request):
-    pass
+    logout(request)
+    messages.success(request, "logout successful!")
+    return redirect('home')

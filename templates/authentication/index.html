@@ -7,15 +7,31 @@
   </head>
   <body>
     {%for message in messages%}
-    <div class="alert alert-{{message.tags}}"></div>
+    <div
+      class="alert alert-{{message.tags}} alert-disimissible fade show"
+      role="alert"
+    >
+      <strong>Message: </strong> {{message}}
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%endfor%}
+    <h3>Welcome to the login page!</h3>
     {% if user.is_authenticated %}
-    <h3>Namaskaaram {{fname}}</h3>
-    {%endif%} {%endfor%}
-    <h1>Welcome to the login page!</h1>
+    <h1>Namaskaaram {{fname}}</h1>
+    <h4>login successfull!</h4>
+    <button type="submit"><a href="./signout">sign out</a></button>
+    {%else%}
     <br />
     <button type="submit"><a href="./signup">sign up</a></button>
     <button type="submit"><a href="./signin">sign in</a></button>
-    <button type="submit"><a href="/signout">sign out</a></button>
-    <script src="your-script.js"></script>
+    {%endif%}
+    <script src="" async defer></script>
   </body>
 </html>
